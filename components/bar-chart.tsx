@@ -45,7 +45,7 @@ const BarChartComponent: React.FC<BarChartProps> = () => {
 
   useEffect(() => {
     setChartData({
-      labels: ["Sen", "Sel", "Rab", "Kam", "Jum", "Sab", "Mng"],
+      labels: ["Senin", "Selasa", "Rabu", "Kamis", "Jumat", "Sabtu", "Minggu"],
       datasets: [
         {
           label: "Pengunjung",
@@ -62,6 +62,19 @@ const BarChartComponent: React.FC<BarChartProps> = () => {
           borderWidth: 1,
         },
       ],
+    });
+    setChartOptions({
+      plugins: {
+        legend: {
+          position: "top",
+        },
+        title: {
+          display: true,
+          text: "Grafik Pengunjung",
+        }
+      },
+      responsive: true,
+      maintainAspectRatio: false
     });
   }, []);
 
